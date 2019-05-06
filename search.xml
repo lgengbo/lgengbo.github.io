@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[（VUE 1）iview的datetimerange的验证]]></title>
+    <url>%2F2019%2F05%2F06%2F%EF%BC%88VUE-1%EF%BC%89iview%E7%9A%84datetimerange%E7%9A%84%E9%AA%8C%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[iview 的DatePicker 为 datetimerange 的验证问题12345678910&lt;FormItem label=&quot;查询时间段&quot; prop=&quot;startEndTime&quot;&gt; &lt;DatePicker type=&quot;datetimerange&quot; placement=&quot;bottom-end&quot; v-model=&quot;exportData.startEndTime&quot; placeholder=&quot;查询时间段&quot; :options=&quot;dateOptions&quot; class=&quot;item last&quot;&gt; &lt;/DatePicker&gt;&lt;/FormItem&gt; data里的数据12345678910111213141516171819202122data() &#123; return &#123; exportData: &#123; startEndTime: [], // 查询时间 &#125;, dateOptions: &#123; disabledDate (date) &#123; return date &amp;&amp; date.valueOf() &lt; Date.now() - 86400000; &#125; &#125;, receiveDate: [&#123; // 验证 required: true, type: &apos;array&apos;, message: &apos;查询时间段&apos;, trigger: &apos;change&apos;, fields: &#123; 0: &#123; type: &quot;date&quot;, required: true, message: &quot;查询时间段&quot; &#125;, 1: &#123; type: &quot;date&quot;, required: true, message: &quot;查询时间段&quot; &#125; &#125; &#125;], &#125;&#125; #]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[起始]]></title>
-    <url>%2F2013%2F12%2F02%2Fmy-first-blog%2F</url>
-    <content type="text"><![CDATA[这里是我们交流的天地前端：12345678910111213141516171819HTML5+CSS3 Javascript JQuery Vue React Angular Boostrap Layui iview echarts ES6 swiper.js Typescript WebpackNPMSass Lessgulplinux微信小程序 后端：123456Node.js Java WebExpressKoaMongoDB MongooseMySQL 网站安全：12345跨站脚本攻击(XSS)跨站请求伪造攻击（CSRF)Http Heads攻击重定向攻击上传文件攻击 工具：123456789101112前端编辑器：vscode notepad++ 微信web开发者工具后端编辑器：IntelliJ IDEA eclipse数据库：Navicat Premium Robo3T SQLyog美工:Photoshop捉包工具：Fiddler截图工具：Snipaste录屏软件：EVCapture下载工具：Internet Download Manager浏览器：chrome虚拟机：VMware Workstation Pro模拟器：夜神模拟器窗口桌面固定：DeskPins 持续更新……]]></content>
+    <url>%2F2019%2F05%2F02%2Fmy-first-blog%2F</url>
+    <content type="text"><![CDATA[这里是我们交流的天地前端：12345678910111213141516171819HTML5+CSS3 Javascript JQuery Vue React Angular Boostrap Layui iview echarts ES6 swiper.js Typescript WebpackNPMSass Lessgulplinux微信小程序 后端：123456Node.js Java WebExpressKoaMongoDB MongooseMySQL 网站安全：12345跨站脚本攻击(XSS)跨站请求伪造攻击（CSRF)Http Heads攻击重定向攻击上传文件攻击 工具：12345678910111213前端编辑器：vscode notepad++ 微信web开发者工具后端编辑器：IntelliJ IDEA eclipse数据库：Navicat Premium Robo3T SQLyog美工:Photoshop捉包工具：Fiddler截图工具：Snipaste录屏软件：EVCapture下载工具：Internet Download Manager浏览器：chrome虚拟机：VMware Workstation Pro模拟器：夜神模拟器窗口桌面固定：DeskPins取色工具：TakeColor 持续更新……]]></content>
       <categories>
         <category>默认分类</category>
       </categories>
