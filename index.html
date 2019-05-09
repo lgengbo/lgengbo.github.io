@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/【JS】日期时间格式化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/【建站】端口号介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -280,7 +280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/08/【JS】日期时间格式化/" itemprop="url">【JS】时间格式化</a></h1>
+                <a class="post-title-link" href="/2019/05/09/【建站】端口号介绍/" itemprop="url">【建站】端口号介绍</a></h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-08T09:51:39+08:00">
-                2019-05-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-09T09:22:03+08:00">
+                2019-05-09
               </time>
             
 
@@ -311,8 +311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/08/【JS】日期时间格式化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/【JS】日期时间格式化/" itemprop="commentCount"></span>
+                <a href="/2019/05/09/【建站】端口号介绍/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/09/【建站】端口号介绍/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -342,14 +342,172 @@
       
         
           
-            <h2 id="时间格式化yyyy-MM-dd-HH-mm-ss-与-yyyy-MM-dd"><a href="#时间格式化yyyy-MM-dd-HH-mm-ss-与-yyyy-MM-dd" class="headerlink" title="时间格式化yyyy-MM-dd HH:mm:ss 与 yyyy-MM-dd"></a>时间格式化yyyy-MM-dd HH:mm:ss 与 yyyy-MM-dd</h2><p>获取当前时间函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function mounthShort() &#123;</span><br><span class="line">  return new Date();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>时间格式化函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function dateFormate(dateTime, timeflag) &#123;</span><br><span class="line">    const date = new Date(Date.parse(dateTime));</span><br><span class="line">    const y = date.getFullYear();</span><br><span class="line">    let m = date.getMonth() + 1;</span><br><span class="line">    m = m &lt; 10 ? (`0$&#123;m&#125;`) : m;</span><br><span class="line">    let d = date.getDate();</span><br><span class="line">    d = d &lt; 10 ? (`0$&#123;d&#125;`) : d;</span><br><span class="line">    let h = date.getHours();</span><br><span class="line">    h = h &lt; 10 ? (`0$&#123;h&#125;`) : h;</span><br><span class="line">    let minute = date.getMinutes();</span><br><span class="line">    minute = minute &lt; 10 ? (`0$&#123;minute&#125;`) : minute;</span><br><span class="line">    let seconds = date.getSeconds();</span><br><span class="line">    seconds = seconds &lt; 10 ? (`0$&#123;seconds&#125;`) : seconds;</span><br><span class="line">    let result = &apos;&apos;;</span><br><span class="line">    if (timeflag) &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125; $&#123;h&#125;:$&#123;minute&#125;:$&#123;seconds&#125;`;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125;`;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<p>调用并格式化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var time = mounthShort(); // 返回的值 Wed May 08 2019 09:46:57 GMT+0800 (中国标准时间)</span><br><span class="line">var timeFormat = dateFormate(time,true); // 格式 yyyy-MM-dd HH:mm:ss</span><br><span class="line">var timeFormats = dateFormate(time,false); // 格式 yyyy-MM-dd</span><br><span class="line">console.log(timeFormat); // 2019-05-08 09:46:57</span><br><span class="line">console.log(timeFormats); // 2019-05-08</span><br></pre></td></tr></table></figure>
-<p>完整代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function mounthShort() &#123;</span><br><span class="line">  return new Date();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function dateFormate(dateTime, timeflag) &#123;</span><br><span class="line">    const date = new Date(Date.parse(dateTime));</span><br><span class="line">    const y = date.getFullYear();</span><br><span class="line">    let m = date.getMonth() + 1;</span><br><span class="line">    m = m &lt; 10 ? (`0$&#123;m&#125;`) : m;</span><br><span class="line">    let d = date.getDate();</span><br><span class="line">    d = d &lt; 10 ? (`0$&#123;d&#125;`) : d;</span><br><span class="line">    let h = date.getHours();</span><br><span class="line">    h = h &lt; 10 ? (`0$&#123;h&#125;`) : h;</span><br><span class="line">    let minute = date.getMinutes();</span><br><span class="line">    minute = minute &lt; 10 ? (`0$&#123;minute&#125;`) : minute;</span><br><span class="line">    let seconds = date.getSeconds();</span><br><span class="line">    seconds = seconds &lt; 10 ? (`0$&#123;seconds&#125;`) : seconds;</span><br><span class="line">    let result = &apos;&apos;;</span><br><span class="line">    if (timeflag) &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125; $&#123;h&#125;:$&#123;minute&#125;:$&#123;seconds&#125;`;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125;`;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">var time = mounthShort(); // 返回的值 Wed May 08 2019 09:46:57 GMT+0800 (中国标准时间)</span><br><span class="line">var timeFormat = dateFormate(time,true); // 格式 yyyy-MM-dd HH:mm:ss</span><br><span class="line">var timeFormats = dateFormate(time,false); // 格式 yyyy-MM-dd</span><br><span class="line">console.log(timeFormat); // 2019-05-08 09:46:57</span><br><span class="line">console.log(timeFormats); // 2019-05-08</span><br></pre></td></tr></table></figure>
+            <p><strong>常用端口号：</strong></p>
+<p>代理服务器常用以下端口：</p>
+<p>（1）. HTTP协议代理服务器常用端口号：80/8080/3128/8081/9080</p>
+<p>（2）. SOCKS代理协议服务器常用端口号：1080</p>
+<p>（3）. FTP（文件传输）协议代理服务器常用端口号：21</p>
+<p>（4）. Telnet（远程登录）协议代理服务器常用端口：23</p>
+<p>（5）. HTTP服务器，默认的端口号为80/tcp（木马Executor开放此端口）；</p>
+<p>（6）. HTTPS（securely transferring web pages）服务器，默认的端口号为443/tcp 443/udp；</p>
+<p>（7）. Telnet（不安全的文本传送），默认端口号为23/tcp（木马Tiny Telnet Server所开放的端口）；</p>
+<p>（8）. FTP，默认的端口号为21/tcp（木马Doly Trojan、Fore、Invisible FTP、WebEx、WinCrash和Blade Runner所开放的端口）；</p>
+<p>（9）. TFTP（Trivial File Transfer Protocol ），默认的端口号为69/udp；</p>
+<p>（10）. SSH（安全登录）、SCP（文件传输）、端口重定向，默认的端口号为22/tcp；</p>
+<p>（11）. SMTP Simple Mail Transfer Protocol (E-mail)，默认的端口号为25/tcp（木马Antigen、Email Password Sender、Haebu Coceda、Shtrilitz Stealth、WinPC、WinSpy都开放这个端口）；</p>
+<p>（12）. POP3 Post Office Protocol (E-mail) ，默认的端口号为110/tcp；</p>
+<p>（13）. WebLogic，默认的端口号为7001；</p>
+<p>（14）. WebSphere应用程序，默认的端口号为9080；</p>
+<p>（15）. WebSphere管理工具，默认的端口号为9090；</p>
+<p>（16）. JBOSS，默认的端口号为8080；</p>
+<p>（17）. TOMCAT，默认的端口号为8080；</p>
+<p>（18）. WIN2003远程登陆，默认的端口号为3389；</p>
+<p>（19）. Symantec AV/Filter for MSE ,默认端口号为 8081；</p>
+<p>（20）. Oracle 数据库，默认的端口号为1521；</p>
+<p>（21）. ORACLE EMCTL，默认的端口号为1158；</p>
+<p>（22）. Oracle XDB（ XML 数据库），默认的端口号为8080；</p>
+<p>（23）. Oracle XDB FTP服务，默认的端口号为2100；</p>
+<p>（24）. MS SQL*SERVER数据库server，默认的端口号为1433/tcp 1433/udp；</p>
+<p>（25）. MS SQL*SERVER数据库monitor，默认的端口号为1434/tcp 1434/udp；</p>
+<p>（26）. QQ，默认的端口号为1080/udp</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/【VUE】模仿去哪儿app源码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/08/【VUE】模仿去哪儿app源码/" itemprop="url">【VUE】模仿去哪儿app源码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-08T16:29:43+08:00">
+                2019-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/08/【VUE】模仿去哪儿app源码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/【VUE】模仿去哪儿app源码/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Vue CLI构建</p>
+<p>下载地址：<a href="https://github.com/lgengbo/whereapp" target="_blank" rel="noopener">https://github.com/lgengbo/whereapp</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">下载后进行依赖安装</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">启动</span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line">打包</span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>实现效果</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/d61aadd1gy1g2usla78r7j20ku112aty.jpg" alt="img"></p>
+<p><img src="http://wx2.sinaimg.cn/mw690/d61aadd1gy1g2usko6kd4j20ku11240l.jpg" alt="img"></p>
+<p><img src="http://wx2.sinaimg.cn/mw690/d61aadd1gy1g2usks8ljdj20ku112js2.jpg" alt="img"></p>
+<p><img src="http://wx4.sinaimg.cn/mw690/d61aadd1gy1g2uskzfca4j20ku112h1l.jpg" alt="img"></p>
+<p><img src="http://wx1.sinaimg.cn/mw690/d61aadd1gy1g2usl4ui60j20ku111aoq.jpg" alt="img"></p>
 
           
         
@@ -450,6 +608,143 @@
                 </span>
                 <a href="/2019/05/08/【JS】时间格式化/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/【JS】时间格式化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="时间格式化yyyy-MM-dd-HH-mm-ss-与-yyyy-MM-dd"><a href="#时间格式化yyyy-MM-dd-HH-mm-ss-与-yyyy-MM-dd" class="headerlink" title="时间格式化yyyy-MM-dd HH:mm:ss 与 yyyy-MM-dd"></a>时间格式化yyyy-MM-dd HH:mm:ss 与 yyyy-MM-dd</h2><p>获取当前时间函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function mounthShort() &#123;</span><br><span class="line">  return new Date();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>时间格式化函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function dateFormate(dateTime, timeflag) &#123;</span><br><span class="line">    const date = new Date(Date.parse(dateTime));</span><br><span class="line">    const y = date.getFullYear();</span><br><span class="line">    let m = date.getMonth() + 1;</span><br><span class="line">    m = m &lt; 10 ? (`0$&#123;m&#125;`) : m;</span><br><span class="line">    let d = date.getDate();</span><br><span class="line">    d = d &lt; 10 ? (`0$&#123;d&#125;`) : d;</span><br><span class="line">    let h = date.getHours();</span><br><span class="line">    h = h &lt; 10 ? (`0$&#123;h&#125;`) : h;</span><br><span class="line">    let minute = date.getMinutes();</span><br><span class="line">    minute = minute &lt; 10 ? (`0$&#123;minute&#125;`) : minute;</span><br><span class="line">    let seconds = date.getSeconds();</span><br><span class="line">    seconds = seconds &lt; 10 ? (`0$&#123;seconds&#125;`) : seconds;</span><br><span class="line">    let result = &apos;&apos;;</span><br><span class="line">    if (timeflag) &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125; $&#123;h&#125;:$&#123;minute&#125;:$&#123;seconds&#125;`;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125;`;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<p>调用并格式化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var time = mounthShort(); // 返回的值 Wed May 08 2019 09:46:57 GMT+0800 (中国标准时间)</span><br><span class="line">var timeFormat = dateFormate(time,true); // 格式 yyyy-MM-dd HH:mm:ss</span><br><span class="line">var timeFormats = dateFormate(time,false); // 格式 yyyy-MM-dd</span><br><span class="line">console.log(timeFormat); // 2019-05-08 09:46:57</span><br><span class="line">console.log(timeFormats); // 2019-05-08</span><br></pre></td></tr></table></figure>
+<p>完整代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function mounthShort() &#123;</span><br><span class="line">  return new Date();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function dateFormate(dateTime, timeflag) &#123;</span><br><span class="line">    const date = new Date(Date.parse(dateTime));</span><br><span class="line">    const y = date.getFullYear();</span><br><span class="line">    let m = date.getMonth() + 1;</span><br><span class="line">    m = m &lt; 10 ? (`0$&#123;m&#125;`) : m;</span><br><span class="line">    let d = date.getDate();</span><br><span class="line">    d = d &lt; 10 ? (`0$&#123;d&#125;`) : d;</span><br><span class="line">    let h = date.getHours();</span><br><span class="line">    h = h &lt; 10 ? (`0$&#123;h&#125;`) : h;</span><br><span class="line">    let minute = date.getMinutes();</span><br><span class="line">    minute = minute &lt; 10 ? (`0$&#123;minute&#125;`) : minute;</span><br><span class="line">    let seconds = date.getSeconds();</span><br><span class="line">    seconds = seconds &lt; 10 ? (`0$&#123;seconds&#125;`) : seconds;</span><br><span class="line">    let result = &apos;&apos;;</span><br><span class="line">    if (timeflag) &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125; $&#123;h&#125;:$&#123;minute&#125;:$&#123;seconds&#125;`;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      result = `$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125;`;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">var time = mounthShort(); // 返回的值 Wed May 08 2019 09:46:57 GMT+0800 (中国标准时间)</span><br><span class="line">var timeFormat = dateFormate(time,true); // 格式 yyyy-MM-dd HH:mm:ss</span><br><span class="line">var timeFormats = dateFormate(time,false); // 格式 yyyy-MM-dd</span><br><span class="line">console.log(timeFormat); // 2019-05-08 09:46:57</span><br><span class="line">console.log(timeFormats); // 2019-05-08</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/【JS】日期时间格式化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/08/【JS】日期时间格式化/" itemprop="url">【JS】时间格式化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-08T09:51:39+08:00">
+                2019-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/08/【JS】日期时间格式化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/【JS】日期时间格式化/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1128,7 +1423,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
